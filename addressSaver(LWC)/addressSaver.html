@@ -1,0 +1,36 @@
+<template>
+    <lightning-card  title="Adress Locator">
+        <div class="slds-box">
+        <template if:true={CountryList}>
+            <lightning-input label="Building Name" onchange={handlebuildingNameChange}></lightning-input>
+            <lightning-combobox
+            name="Country"
+            label="Country"
+            value={CountryValue}
+            placeholder="Select Country"
+            options={CountryList}
+            onchange={handleCountryChange} ></lightning-combobox>
+            <lightning-combobox
+            name="State"
+            label="State"
+            value={StateValue}
+            placeholder="Select State"
+            options={StateList}
+            onchange={handleStateChange} ></lightning-combobox>
+            <lightning-combobox
+            name="City"
+            label="City"
+            value={CityValue}
+            placeholder="Select City"
+            options={CityList}
+            onchange={handleCityChange} ></lightning-combobox>
+            <div >
+               <b>{message}</b> 
+            </div>
+
+            <lightning-button variant="brand" label="Save Address" onclick={saveaddress}></lightning-button>
+        
+        </template>
+    </div>
+    </lightning-card>
+</template>
